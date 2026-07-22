@@ -9,7 +9,6 @@
 <meta property="og:description" content="One desktop app for global multi-asset traders and Indian market traders — pre-trade checklist, trading journal, backtest lab and prop-firm compliance tracking, with Indian charges built in.">
 <meta property="og:type" content="website">
 <meta name="google-site-verification" content="Zz0POo6PT8atKN88I_v69MOxKsxyBaa_XHHFK0veSNc" />
-<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -267,6 +266,16 @@
     .soon-card{grid-template-columns:1fr;}
     .soon-right{border-left:none; border-top:1px dashed var(--rule-strong);}
   }
+  /* ---------- shipped-feature variant (was "coming soon") ---------- */
+  .soon-card.is-live{
+    border:1px solid var(--rule-strong);
+    background:var(--card);
+  }
+  .live-badge{
+    display:inline-flex; align-items:center; gap:6px; font-family:var(--mono); font-size:0.7rem;
+    letter-spacing:0.08em; text-transform:uppercase; color:#0F7A52;
+    border:1px solid #0F7A52; border-radius:20px; padding:5px 12px; margin-bottom:16px;
+  }
 
   /* ---------- differentiation ---------- */
   .diff{display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;}
@@ -362,7 +371,7 @@
       <a href="#features">Features</a>
       <a href="#why">Why desktop</a>
     </nav>
-    <a class="nav-cta" href="#waitlist">Get Early Access</a>
+    <a class="nav-cta" href="#waitlist">⬇ Download Free Trial</a>
   </div>
 </header>
 
@@ -375,10 +384,10 @@
     <p class="hero-sub">EdgeBookPro is a pre-trade checklist and trading journal built into one desktop app — for traders who work both global markets and Indian markets, and are tired of switching tools (or units) between them.</p>
     <div class="hero-cta-row">
       <a class="btn-primary" href="#waitlist">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-        Join the Waitlist
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
+        Download for Windows — Free 30-Day Trial
       </a>
-      <span class="hero-meta">Coming soon to Windows · be first to know when it opens</span>
+      <span class="hero-meta">Windows 10/11 · 64-bit · No card needed to start your trial</span>
     </div>
 
     <div class="ledger-wrap reveal">
@@ -529,7 +538,7 @@
         <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h5M8 17h8"/></svg>
         <h3>Trade Log</h3>
         <p>Every trade and every partial leg it was closed in, searchable and filterable by session, instrument or class.</p>
-        <p class="feat-detail">Includes — full history table, multi-filter search, per-leg partial breakdown.</p>
+        <p class="feat-detail">Includes — full history table or a chart-forward card gallery (one click to switch), multi-filter search, per-leg partial breakdown.</p>
       </div>
       <div class="feat">
         <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="5" width="16" height="16" rx="1"/><path d="M4 10h16M9 5v-2M15 5v-2"/></svg>
@@ -587,17 +596,17 @@
       </div>
     </div>
 
-    <div class="soon-card reveal">
+    <div class="soon-card is-live reveal">
       <div class="soon-left">
-        <span class="soon-badge">◐ Coming soon</span>
+        <span class="live-badge">✓ Live now</span>
         <h3>Indian Tax Module</h3>
         <p>A dedicated Tax page built around the Indian Financial Year (April–March) — so season-end doesn't mean exporting everything into a spreadsheet by hand.</p>
       </div>
       <div class="soon-right">
         <div class="soon-row"><span>FY-wise computation</span><span>April → March, auto-rolled</span></div>
-        <div class="soon-row"><span>View</span><span>Indian / Global / Combined toggle</span></div>
-        <div class="soon-row"><span>F&amp;O turnover</span><span>Working shown, not just the number</span></div>
-        <div class="soon-row"><span>Export</span><span>Clean JSON, ready for your CA</span></div>
+        <div class="soon-row"><span>Capital gains</span><span>STCG/LTCG, auto-classified by entry+exit time</span></div>
+        <div class="soon-row"><span>Advance tax</span><span>Live payable estimate + §234B/234C interest</span></div>
+        <div class="soon-row"><span>Challan &amp; TDS</span><span>ITNS 280N tracking, TDS credit, loss carry-forward</span></div>
       </div>
     </div>
   </section>
@@ -620,7 +629,7 @@
           </div>
           <div class="diff-item">
             <span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
-            <div><h4>Your data stays yours</h4><p>License checks pass through a minimal middleware layer — your trade history is never the product.</p></div>
+            <div><h4>Your data stays yours</h4><p>Trades are stored locally in a real SQLite database on your machine, not scattered browser storage — license checks pass through a minimal middleware layer only, your trade history is never the product.</p></div>
           </div>
         </div>
       </div>
@@ -631,28 +640,39 @@
         <hr>
         <div class="diff-row"><span>Broker sync required</span><span>No</span></div>
         <div class="diff-row"><span>Works offline</span><span>Yes</span></div>
+        <div class="diff-row"><span>Local SQLite storage</span><span>Yes</span></div>
         <div class="diff-row"><span>Indian F&amp;O charges (STT, GST…)</span><span>Auto</span></div>
         <div class="diff-row"><span>Monthly subscription</span><span>No</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= FINAL CTA / WAITLIST ================= -->
+  <!-- ================= FINAL CTA / DOWNLOAD + WAITLIST ================= -->
   <section id="waitlist">
     <div class="cta-final reveal">
-      <span class="eyebrow" style="color:#E4B15A;"><span class="dot" style="background:#E4B15A;"></span> COMING SOON · WINDOWS</span>
-      <h2 style="margin-top:14px;">Be the first to open <em>the checklist.</em></h2>
-      <p>EdgeBookPro isn't public yet. Leave your email and we'll send you an invite the moment early access opens — no spam, just the launch.</p>
+      <span class="eyebrow" style="color:#E4B15A;"><span class="dot" style="background:#E4B15A;"></span> AVAILABLE NOW · WINDOWS</span>
+      <h2 style="margin-top:14px;">Open <em>the checklist</em> today.</h2>
+      <p>Leave your email and we'll unlock the download — then start your free 30-day trial right from the app, no license key, no credit card.</p>
 
       <form class="waitlist-form" id="waitlist-form" novalidate>
         <input type="email" id="waitlist-email" name="email" placeholder="you@tradingdesk.com" autocomplete="email" required>
-        <button type="submit" id="waitlist-submit">Join the Waitlist</button>
+        <button type="submit" id="waitlist-submit">Unlock Download</button>
       </form>
       <div class="waitlist-error" id="waitlist-error">Please enter a valid email address.</div>
-      <div class="waitlist-success" id="waitlist-success">You're on the list — we'll email you when EdgeBookPro opens up. 🎉</div>
+      <div class="waitlist-success" id="waitlist-success">You're on the list — grab your download below. 🎉</div>
       <iframe name="zf_hidden_iframe" id="zf_hidden_iframe" style="display:none;" title="waitlist submit target"></iframe>
 
-      <div class="plat waitlist-note">WINDOWS 10 / 11 · 64-BIT · LAUNCHING SOON</div>
+      <div id="waitlist-download-block" style="display:none; margin-top:22px;">
+        <a class="btn-primary" id="waitlist-download-btn" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/latest" target="_blank" rel="noopener" style="display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
+          Download for Windows — Free Trial
+        </a>
+        <p style="margin-top:16px; font-size:0.8rem; color:var(--ink-faint,#7C7F87); max-width:520px;">
+          <strong>First install note:</strong> Windows may show a blue "Windows protected your PC" screen — this is normal for a new app that hasn't yet built up download history with Microsoft. Click <strong>More info</strong>, then <strong>Run anyway</strong> to continue installing.
+        </p>
+      </div>
+
+      <div class="plat waitlist-note">WINDOWS 10 / 11 · 64-BIT · 30-DAY FREE TRIAL, NO CARD NEEDED</div>
       <div class="plat waitlist-note">Questions first? Write to <a href="mailto:info@edgebookpro.com" style="color:#E4B15A; text-decoration:underline;">info@edgebookpro.com</a></div>
     </div>
   </section>
@@ -666,7 +686,7 @@
       <a href="#markets">Markets</a>
       <a href="#features">Features</a>
       <a href="#why">Why desktop</a>
-      <a href="#waitlist">Waitlist</a>
+      <a href="#waitlist">Download</a>
       <a href="mailto:info@edgebookpro.com">info@edgebookpro.com</a>
     </div>
     <span style="font-family:var(--mono); font-size:0.76rem; color:var(--ink-faint);">© 2026 EdgeBookPro. Built by a trader.</span>
@@ -768,6 +788,11 @@
       btn.textContent = 'Added ✓';
       form.style.display = 'none';
       successEl.style.display = 'block';
+
+      var downloadBlock = document.getElementById('waitlist-download-block');
+      var downloadBtn = document.getElementById('waitlist-download-btn');
+      if (downloadBlock) downloadBlock.style.display = 'block';
+      if (downloadBtn) { try { window.open(downloadBtn.href, '_blank'); } catch (err) {} }
     });
   })();
 </script>
