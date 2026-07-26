@@ -350,7 +350,7 @@
   footer{padding:44px 0; border-top:1px solid var(--rule);}
   .foot-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:18px;}
   .foot-row .brand{font-size:0.86rem;}
-  .foot-links{display:flex; gap:26px; font-size:0.82rem; color:var(--ink-faint);}
+  .foot-links{display:flex; flex-wrap:wrap; gap:10px 26px; font-size:0.82rem; color:var(--ink-faint);}
   .foot-links a:hover{color:var(--ink);}
 
   /* reveal-on-scroll */
@@ -361,6 +361,8 @@
     nav.links{display:none;}
     .hero{padding:56px 0 20px;}
     section{padding:64px 0;}
+    .foot-row{justify-content:center; text-align:center;}
+    .foot-links{justify-content:center;}
   }
 </style>
 </head>
@@ -827,9 +829,7 @@
       successEl.style.display = 'block';
 
       var downloadBlock = document.getElementById('waitlist-download-block');
-      var downloadBtn = document.getElementById('waitlist-download-btn');
       if (downloadBlock) downloadBlock.style.display = 'block';
-      if (downloadBtn) { try { window.open(downloadBtn.href, '_blank'); } catch (err) {} }
     });
   })();
 </script>
