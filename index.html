@@ -389,9 +389,9 @@
     <div class="hero-cta-row">
       <a class="btn-primary" href="#waitlist">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
-        Download for Windows — Free 30-Day Trial
+        Download for Windows or macOS — Free 30-Day Trial
       </a>
-      <span class="hero-meta">Windows 10/11 · 64-bit · No card needed to start your trial</span>
+      <span class="hero-meta">Windows 10/11 · 64-bit · macOS (Apple Silicon) · No card needed to start your trial</span>
     </div>
 
     <div class="ledger-wrap reveal">
@@ -654,7 +654,7 @@
   <!-- ================= FINAL CTA / DOWNLOAD + WAITLIST ================= -->
   <section id="waitlist">
     <div class="cta-final reveal">
-      <span class="eyebrow" style="color:#E4B15A;"><span class="dot" style="background:#E4B15A;"></span> AVAILABLE NOW · WINDOWS</span>
+      <span class="eyebrow" style="color:#E4B15A;"><span class="dot" style="background:#E4B15A;"></span> AVAILABLE NOW · WINDOWS &amp; MACOS</span>
       <h2 style="margin-top:14px;">Open <em>the checklist</em> today.</h2>
       <p>Leave your email and we'll unlock the download — then start your free 30-day trial right from the app, no license key, no credit card.</p>
 
@@ -667,16 +667,49 @@
       <iframe name="zf_hidden_iframe" id="zf_hidden_iframe" style="display:none;" title="waitlist submit target"></iframe>
 
       <div id="waitlist-download-block" style="display:none; margin-top:22px;">
-        <a class="btn-primary" id="waitlist-download-btn" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/latest" target="_blank" rel="noopener" style="display:inline-flex;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
-          Download for Windows — Free Trial
-        </a>
-        <p style="margin-top:16px; font-size:0.8rem; color:var(--ink-faint,#7C7F87); max-width:520px;">
-          <strong>First install note:</strong> Windows may show a blue "Windows protected your PC" screen — this is normal for a new app that hasn't yet built up download history with Microsoft. Click <strong>More info</strong>, then <strong>Run anyway</strong> to continue installing.
-        </p>
+        <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+          <a class="btn-primary" id="waitlist-download-btn" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v2.1.0/Edge-Book-Pro-Setup-2.1.0.exe" target="_blank" rel="noopener" style="display:inline-flex;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
+            Download EXE — Windows
+          </a>
+          <a class="btn-primary" id="waitlist-download-btn-mac" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v2.1.0/Edge-Book-Pro-2.1.0-arm64.dmg" target="_blank" rel="noopener" style="display:inline-flex; background:transparent; border-color:#E4B15A; color:#E4B15A;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
+            Download DMG — macOS (Apple Silicon)
+          </a>
+        </div>
+
+        <div style="margin-top:24px; max-width:640px; margin-left:auto; margin-right:auto; text-align:left; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:18px 22px;">
+          <p style="font-size:0.82rem; color:#D7D2C4; line-height:1.6; margin:0;">
+            <strong style="color:#E4B15A;">⚠️ Note —</strong> both the Windows and macOS builds in this release are unsigned, so you'll see two separate security prompts before you can run the app. This is expected and safe to proceed through — it's standard for any app distributed outside the Windows Store / Mac App Store without a paid code-signing certificate. It does not mean the file is unsafe.
+          </p>
+        </div>
+
+        <div style="margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:640px; margin-left:auto; margin-right:auto; text-align:left;">
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px 18px;">
+            <p style="font-family:var(--mono); font-size:0.78rem; letter-spacing:0.03em; color:#E4B15A; margin:0 0 10px;">🪟 WINDOWS — FULL STEPS</p>
+            <ol style="margin:0; padding-left:18px; color:#C4C9DC; font-size:0.82rem; line-height:1.7;">
+              <li>Click the Download EXE link above. Your browser (Edge/Chrome) may flag the file as an "uncommon" or unverified download.</li>
+              <li>If you see a download warning bar, click the "···" (more options) next to the file and choose Keep → Keep anyway (wording varies slightly by browser).</li>
+              <li>Once downloaded, double-click the installer to run it.</li>
+              <li>Windows Defender SmartScreen will show a blue "Windows protected your PC" screen.</li>
+              <li>Click "More info" (small link inside that screen).</li>
+              <li>Click "Run anyway" to start the installation.</li>
+            </ol>
+          </div>
+          <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px 18px;">
+            <p style="font-family:var(--mono); font-size:0.78rem; letter-spacing:0.03em; color:#E4B15A; margin:0 0 10px;">🍎 MACOS — FULL STEPS</p>
+            <ol style="margin:0; padding-left:18px; color:#C4C9DC; font-size:0.82rem; line-height:1.7;">
+              <li>Click the Download DMG link above and open the downloaded file.</li>
+              <li>Drag Edge Book Pro into the Applications folder, then try opening it.</li>
+              <li>macOS will block it with an "Apple could not verify this app" / "unknown developer" warning.</li>
+              <li>Go to System Settings → Privacy &amp; Security, scroll down to the security message about Edge Book Pro, and click "Open Anyway".</li>
+              <li>Confirm by clicking "Open" in the dialog that follows.</li>
+            </ol>
+          </div>
+        </div>
       </div>
 
-      <div class="plat waitlist-note">WINDOWS 10 / 11 · 64-BIT · 30-DAY FREE TRIAL, NO CARD NEEDED</div>
+      <div class="plat waitlist-note">WINDOWS 10 / 11 · 64-BIT &nbsp;·&nbsp; MACOS · APPLE SILICON (ARM64) &nbsp;·&nbsp; 30-DAY FREE TRIAL, NO CARD NEEDED</div>
       <div class="plat waitlist-note">Questions first? Write to <a href="mailto:info@edgebookpro.com" style="color:#E4B15A; text-decoration:underline;">info@edgebookpro.com</a></div>
     </div>
   </section>
