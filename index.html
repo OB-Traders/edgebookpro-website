@@ -83,12 +83,21 @@
   html[data-theme="dark"] .stamp{ background:rgba(20,42,33,0.92); }
   html[data-theme="dark"] .live-badge{ color:#3FA374; border-color:#3FA374; }
   /* Smooth theme switch — applied to every element so nothing jumps
-     instantly while its neighbours fade (that mismatch was the "jitter").
-     Only color-related properties transition; transform/opacity used by
-     hover states and scroll-reveal are left untouched. */
+     instantly while its neighbours fade (that mismatch was the earlier "jitter").
+     text/icon colors (color, fill, stroke) fade over .15s starting immediately;
+     background/border/shadow fade over .2s but start .06s later. Light-theme
+     text is dark and dark-theme text is light, so crossfading both on the
+     exact same schedule made background and text pass through the same
+     mid-gray at the same moment, collapsing contrast (text briefly
+     near-invisible). Letting text lead and finish first, with background
+     trailing behind, keeps both looking like genuine fades while keeping
+     contrast readable throughout. Transform/opacity used by hover states
+     and scroll-reveal are untouched. */
   *, *::before, *::after {
-    transition: background-color .2s ease, color .2s ease, border-color .2s ease,
-      box-shadow .2s ease, fill .2s ease, stroke .2s ease;
+    transition-property: color, fill, stroke, background-color, border-color, box-shadow;
+    transition-duration: .15s, .15s, .15s, .2s, .2s, .2s;
+    transition-delay: 0s, 0s, 0s, .06s, .06s, .06s;
+    transition-timing-function: ease;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -147,7 +156,7 @@
     display:inline-flex; align-items:center; justify-content:center;
     width:38px; height:38px; border-radius:8px; flex-shrink:0;
     border:1px solid var(--rule-strong); background:var(--card); color:var(--ink-soft);
-    cursor:pointer; transition:background .15s ease, color .15s ease, border-color .15s ease;
+    cursor:pointer; transition:color .15s ease, background-color .2s ease .06s, border-color .2s ease .06s;
   }
   .theme-toggle:hover{color:var(--ink); border-color:var(--ink-soft);}
   .theme-toggle svg{width:18px; height:18px; display:block;}
@@ -177,7 +186,7 @@
     font-family:var(--mono); font-weight:600; font-size:0.9rem; letter-spacing:0.02em;
     background:var(--ink); color:var(--paper); padding:15px 26px; border-radius:7px;
     display:inline-flex; align-items:center; gap:10px; border:1px solid var(--ink);
-    transition:transform .15s ease, background .15s ease;
+    transition:transform .15s ease, background-color .2s ease .06s;
   }
   .btn-primary:hover{background:var(--brass-deep); border-color:var(--brass-deep); transform:translateY(-1px);}
   .btn-primary svg{width:15px;height:15px;}
@@ -201,6 +210,13 @@
   .ledger-col{padding:26px 30px 24px;}
   .ledger-col.global{background:linear-gradient(180deg, #fff 0%, #FDFCF9 100%);}
   .ledger-col.indian{background:linear-gradient(180deg, #FDFCF9 0%, #fff 100%);}
+  /* This card's background is a gradient, which CSS cannot fade via transition —
+     it always swaps instantly on theme change. Fading this card's own text
+     color on the universal .15s schedule while its background jumps instantly
+     caused a mismatch (old-color text briefly low-contrast on the new
+     background). So text/icon colors inside this card switch instantly too,
+     staying in sync with the background instead of fading independently. */
+  .ledger-col, .ledger-col *{ transition-property: none; }
   .ledger-tag{
     display:inline-block; font-family:var(--mono); font-size:0.68rem; letter-spacing:0.1em;
     text-transform:uppercase; padding:3px 9px; border-radius:4px; margin-bottom:16px; font-weight:600;
@@ -263,7 +279,7 @@
 
   /* ---------- feature grid ---------- */
   .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:12px; overflow:hidden;}
-  .feat{background:var(--card); padding:32px 28px; transition:background .15s ease;}
+  .feat{background:var(--card); padding:32px 28px; transition:background-color .2s ease .06s;}
   .feat:hover{background:var(--paper-dim);}
   .feat-icon{width:30px; height:30px; margin-bottom:18px; color:var(--brass-deep);}
   .feat h3{font-size:1.04rem; font-weight:600; margin-bottom:8px;}
@@ -306,7 +322,7 @@
   .tour-tab{
     font-family:var(--mono); font-size:0.74rem; padding:8px 14px; border-radius:20px;
     border:1px solid var(--rule-strong); background:var(--card); color:var(--ink-faint);
-    cursor:pointer; transition:all .15s ease;
+    cursor:pointer; transition:color .15s ease, background-color .2s ease .06s, border-color .2s ease .06s;
   }
   .tour-tab:hover{color:var(--ink); border-color:var(--ink-soft);}
   .tour-tab.active{background:var(--indigo); border-color:var(--indigo); color:#fff;}
