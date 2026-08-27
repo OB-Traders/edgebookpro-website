@@ -82,9 +82,13 @@
   html[data-theme="dark"] .ledger-col.indian{ background:linear-gradient(180deg, #171A20 0%, var(--card) 100%); }
   html[data-theme="dark"] .stamp{ background:rgba(20,42,33,0.92); }
   html[data-theme="dark"] .live-badge{ color:#3FA374; border-color:#3FA374; }
-  body, header.site, .ledger-split, .ledger-col, .process-grid, .stage, .feat, .feat-grid,
-  .soon-card, .soon-left, .soon-right, .tour-tab, .eyebrow, .diff-card, .card {
-    transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+  /* Smooth theme switch — applied to every element so nothing jumps
+     instantly while its neighbours fade (that mismatch was the "jitter").
+     Only color-related properties transition; transform/opacity used by
+     hover states and scroll-reveal are left untouched. */
+  *, *::before, *::after {
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease,
+      box-shadow .2s ease, fill .2s ease, stroke .2s ease;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
