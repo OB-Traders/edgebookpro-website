@@ -724,13 +724,13 @@
         <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>
         <h3>Strategies</h3>
         <p>Playbooks for every setup you trade — your own entry rules, kept in view instead of in your head.</p>
-        <p class="feat-detail">Includes — 6 built-in playbook templates <span style="color:#E4B15A; font-weight:600;">(New in 2.5.0: Gold XAUUSD Asia Session variant)</span>, saved playbooks, notes per setup, win rate by strategy.</p>
+        <p class="feat-detail">Includes — 5 built-in strategy models with step-by-step picture examples and a shareable Strategy Poster <span style="color:#E4B15A; font-weight:600;">(New in 3.1.0)</span>, saved playbooks, notes per setup, win rate by strategy.</p>
       </div>
       <div class="feat">
         <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="10" width="4" height="10"/><rect x="10" y="5" width="4" height="15"/><rect x="17" y="13" width="4" height="7"/></svg>
         <h3>Back Test</h3>
         <p>Log setups against past charts manually, or switch to Chart Replay and play real historical candles bar-by-bar with Play/Pause/Speed and instant Buy/Sell entry — a tab inside Trade Lab, alongside Plan and Review.</p>
-        <p class="feat-detail">Includes — logged setups against past charts, R:R tracking, real historical candles via Twelve Data, 1x–8x replay speed.</p>
+        <p class="feat-detail">Includes — logged setups against past charts, an R-based dashboard with RR Optimizer <span style="color:#E4B15A; font-weight:600;">(New in 3.1.0)</span>, real historical candles via Twelve Data, 0.05x–16x replay speed.</p>
       </div>
       <div class="feat">
         <svg class="feat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l7 7-7 7M13 4l7 7-7 7"/></svg>
@@ -791,28 +791,61 @@
         <p>Real historical candles via a free Twelve Data key, played back bar-by-bar inside the Backtest tab — mark it up with a full drawing toolkit, save your progress as a named Session to resume anytime, as close to live trading practice as a journal gets without touching real capital.</p>
       </div>
       <div class="soon-right">
-        <div class="soon-row"><span>Playback</span><span>Play/Pause, single-bar Step, Step Back <span style="color:#E4B15A; font-weight:600;">(New in 2.8.0)</span>, 1x–8x speed, Jump-to-date</span></div>
+        <div class="soon-row"><span>Playback</span><span>Play/Pause, single-bar Step, Step Back <span style="color:#E4B15A; font-weight:600;">(New in 2.8.0)</span>, 0.05x–16x speed, Jump-to-date</span></div>
         <div class="soon-row"><span>Trade entry</span><span>Market/Limit/Stop order panel <span style="color:#E4B15A; font-weight:600;">(New in 2.8.0)</span>, live floating P&amp;L panel, inline SL/TP, missed-opportunity tracking</span></div>
         <div class="soon-row"><span>Instruments</span><span>Major FX pairs, common crosses, metals, WTI, 3 US indices</span></div>
         <div class="soon-row"><span>Drawing tools</span><span>Trend Line, Horizontal/Vertical Line, Ray, Rectangle, Fibonacci (fully custom levels <span style="color:#E4B15A; font-weight:600;">New in 2.8.0</span>), Magnet mode <span style="color:#E4B15A; font-weight:600;">(New in 2.6.0)</span></span></div>
         <div class="soon-row"><span>Drawing editing</span><span>One-click quick toolbar, a Style/Text/Coordinates/Visibility Settings window, named style templates <span style="color:#E4B15A; font-weight:600;">(New in 2.7.0)</span></span></div>
         <div class="soon-row"><span>Session tags</span><span>Trades auto-tagged by trading session (Asia, London, NY, Pre-London, Pre-NY, Other) from your own schedule <span style="color:#E4B15A; font-weight:600;">(New in 3.0.0)</span></span></div>
         <div class="soon-row"><span>Sessions</span><span>Save &amp; resume named sessions, isolated drawings/trades, a per-session equity curve on the Backtest dashboard <span style="color:#E4B15A; font-weight:600;">(New in 2.7.0)</span>, win rate by order type <span style="color:#E4B15A; font-weight:600;">(New in 2.8.0)</span></span></div>
-        <div class="soon-row"><span>Candles &amp; speed</span><span>Fixed candle width for a steady view, speed slider 0.05x–8x <span style="color:#E4B15A; font-weight:600;">(New in 3.0.0)</span></span></div>
+        <div class="soon-row"><span>Candles &amp; speed</span><span>Fixed candle width for a steady view, speed slider 0.05x–16x <span style="color:#E4B15A; font-weight:600;">(New in 3.0.0)</span></span></div>
+        <div class="soon-row"><span>Risk sizing</span><span>Pick 0.25 / 0.5 / 0.75 / 1% risk and the lot is calculated from your stop loss, locked at entry, with optional compounding <span style="color:#E4B15A; font-weight:600;">(New in 3.1.0)</span></span></div>
+        <div class="soon-row"><span>Chart data</span><span>See every saved candle, export 1m data to one file and import it on another computer — replay without a key <span style="color:#E4B15A; font-weight:600;">(New in 3.1.0)</span></span></div>
         <div class="soon-row"><span>Setup</span><span>Free key, no credit card — stored locally, sent straight to Twelve Data</span></div>
       </div>
     </div>
 
     <div class="soon-card is-live reveal">
       <div class="soon-left">
-        <span class="live-badge">✓ Live now — v3.0.0</span>
-        <h3>6 Ready-Made KF Strategies</h3>
-        <p>Six XAUUSD/EURUSD playbooks (KF-S1 to KF-S6) come built in, so you can load one and start backtesting it in Chart Replay straight away — with a checklist right beside the chart.</p>
+        <span class="live-badge">✓ Live now — v3.1.0</span>
+        <h3>Shareable Recap &amp; Trade Posters</h3>
+        <p>Turn a month, a single trade or a whole backtest into a clean image you can post — Story or Instagram feed size, PNG or JPG, with your own name, handle and logo.</p>
       </div>
       <div class="soon-right">
-        <div class="soon-row"><span>Playbooks</span><span>KF-S1 to KF-S6, editable like any of your own strategies</span></div>
+        <div class="soon-row"><span>Monthly Recap</span><span>Return %, P&amp;L, win rate, profit factor, max drawdown and peak R for any month, plus a 12-month year overview</span></div>
+        <div class="soon-row"><span>Trade poster</span><span>One trade with its chart screenshot, result in R, %, and money, entry, stop, target and your note</span></div>
+        <div class="soon-row"><span>Your branding</span><span>Pick the account, show a Real / Prop / Funded tag, add your logo and a social handle</span></div>
+        <div class="soon-row"><span>Privacy</span><span>Hide Amounts to share only % and R</span></div>
+      </div>
+    </div>
+
+    <div class="soon-card is-live reveal">
+      <div class="soon-left">
+        <span class="live-badge">✓ Live now — v3.1.0</span>
+        <h3>Backtest Dashboard in R</h3>
+        <p>One Manual / Chart Replay toggle switches the whole Backtest tab. Each Chart Replay session tests one strategy, and the dashboard measures everything in R, the way a prop firm thinks about risk.</p>
+      </div>
+      <div class="soon-right">
+        <div class="soon-row"><span>Statistics</span><span>Expectancy, profit factor, drawdown, streaks, equity and drawdown charts, strategy comparison</span></div>
+        <div class="soon-row"><span>Breakdowns</span><span>Weekday, time, session and risk-per-trade breakdowns with insights</span></div>
+        <div class="soon-row"><span>RR Optimizer</span><span>See what 1:1 to 1:10 targets would have done on the same trades</span></div>
+        <div class="soon-row"><span>Sessions</span><span>Resume, rename or delete sessions; share the result as a poster</span></div>
+      </div>
+    </div>
+
+    <div class="soon-card is-live reveal">
+      <div class="soon-left">
+        <span class="live-badge">✓ Live now — v3.1.0</span>
+        <h3>5 Built-In Strategy Models with Picture Examples</h3>
+        <p>London Reversal, NY Trap Reversal, SMT London Continuation, SMT NY Continuation and SMT Continuation (Asia Liquidity Variant) come built in with a full overview, numbered rules and a checklist — and every one has step-by-step picture examples you can play through.</p>
+      </div>
+      <div class="soon-right">
+        <div class="soon-row"><span>Models</span><span>5 built-in models, editable like any of your own strategies — your edits are never overwritten</span></div>
+        <div class="soon-row"><span>Examples</span><span>8 step-by-step picture examples per model: valid Buy and Sell, each trap, and the cases to skip, with a full-page viewer</span></div>
+        <div class="soon-row"><span>Strategy Poster</span><span>A whole strategy as a shareable Story or feed image: overview, rules, checklist and examples</span></div>
         <div class="soon-row"><span>Replay checklist</span><span>Tick your rules while you backtest; ticks are saved with the trade</span></div>
         <div class="soon-row"><span>Routine</span><span>Safer saving, a Timeline that shows when each habit was done, back-dated ticks and a Clear day button</span></div>
+        <div class="soon-row"><span>Recording</span><span>Record the app, posters and example viewer — dropdowns and pickers show in the video</span></div>
       </div>
     </div>
 
@@ -955,11 +988,11 @@
 
       <div id="waitlist-download-block" style="display:none; margin-top:22px;">
         <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
-          <a class="btn-primary" id="waitlist-download-btn" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v3.0.0/Edge-Book-Pro-Setup-3.0.0.exe" target="_blank" rel="noopener" style="display:inline-flex;">
+          <a class="btn-primary" id="waitlist-download-btn" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v3.1.0/Edge-Book-Pro-Setup-3.1.0.exe" target="_blank" rel="noopener" style="display:inline-flex;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
             Download EXE — Windows
           </a>
-          <a class="btn-primary" id="waitlist-download-btn-mac" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v3.0.0/Edge-Book-Pro-3.0.0-arm64.dmg" target="_blank" rel="noopener" style="display:inline-flex; background:transparent; border-color:#E4B15A; color:#E4B15A;">
+          <a class="btn-primary" id="waitlist-download-btn-mac" href="https://github.com/OB-Traders/ebp-desktop-Updates/releases/download/v3.1.0/Edge-Book-Pro-3.1.0-arm64.dmg" target="_blank" rel="noopener" style="display:inline-flex; background:transparent; border-color:#E4B15A; color:#E4B15A;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l4-4m-4 4l-4-4M4 19h16"/></svg>
             Download DMG — macOS (Apple Silicon)
           </a>
